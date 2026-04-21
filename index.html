@@ -1042,6 +1042,13 @@
             var container = document.querySelector('.container');
             var exploreBtn = document.querySelector('.btn-primary');
 
+            // Force container focus on load so arrow keys work natively right away
+            if (container) {
+                container.setAttribute('tabindex', '0');
+                container.style.outline = 'none';
+                container.focus();
+            }
+
             // "Explore More" scrolls smoothly to page 2
             if (exploreBtn) {
                 exploreBtn.addEventListener('click', function () {
